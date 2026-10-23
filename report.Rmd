@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load-lib, include = FALSE}
 library(tidyverse)
 # Add any other libraries here
-
+library(readr)
 
 
 ```
@@ -22,7 +22,7 @@ library(tidyverse)
 ```{r load-data, include=FALSE}
 # load your data here and any pre-processing/cleaning 
 #  that you need for your report.
-
+hotel_booking <- read_csv("data/hotel_booking.csv")
 
 
 
