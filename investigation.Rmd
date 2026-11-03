@@ -1,18 +1,20 @@
 ---
 title: "IDS investigation worksheet"
-author: "by Team-Name: User1, User2, User3, User4 & User5"
+author: "by Team-Name: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu & User5"
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
-**Note:** You can use this file as you 'working document' where you can try out various investigation ideas and keep notes about your findings. How you use and structure this file is up to you. It is recommended that you keep notes about what you are investigating and what you find as this will make the process of creating your presentation and report easier. Please note that you _do not_ need to submit this file as part of your group project.
+**Note:** You can use this file as you 'working document' where you can try out various investigation ideas and keep notes about your findings. How you use and structure this file is up to you. It is recommended that you keep notes about what you are investigating and what you find as this will make the process of creating your presentation and report easier. Please note that you *do not* need to submit this file as part of your group project.
 
+1. Which month has the highest reservation?
+2. Do city and resort hotel have the different seasonal booking pattern?
+3. Are weekend stays more common than weekday stays?
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 
 ```{r load-lib, message = FALSE}
 library(tidyverse)
@@ -22,7 +24,6 @@ library(tidyverse)
 
 ```
 
-
 ```{r load-data}
 # load your data 
 
@@ -30,5 +31,3 @@ library(tidyverse)
 
 
 ```
-
-
