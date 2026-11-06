@@ -7,6 +7,10 @@ output: html_document
 
 **Note:** You can use this file as you 'working document' where you can try out various investigation ideas and keep notes about your findings. How you use and structure this file is up to you. It is recommended that you keep notes about what you are investigating and what you find as this will make the process of creating your presentation and report easier. Please note that you *do not* need to submit this file as part of your group project.
 
+common:
+seasonality/ room Price
+different:
+customer type/ customer requests
 
 Factors effect hotel booking demand
 1. Which month has the highest reservation?
