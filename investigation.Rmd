@@ -14,7 +14,7 @@ customer type/ customer requests
 
 Factors effect hotel booking demand
 [common]
-1. seansoality--Which month has the highest reservation?
+1. month--Which month has the highest reservation?
 2. room price--
 
 [different]
