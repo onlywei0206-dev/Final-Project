@@ -14,11 +14,11 @@ customer type/ customer requests
 
 Factors effect hotel booking demand
 [common]
-1. month--Which month has the highest reservation?
-2. room price--
+1. month--Which month has the highest reservation?--histogram
+2. room price--How ADR related to the reservation frequency?--histogram
 
 [different]
-1. customer type--
+1. customer type--How the four customer type(baby, children, both, only adult) distribute in two hotels--pie chart
 2. customer requests--
 
 [conclusion]
