@@ -19,7 +19,9 @@ Factors effect hotel booking demand
 
 [different]
 1. customer type--How the four customer type(baby, children, both, only adult) distribute in two hotels--pie chart
-2. customer requests--
+2. customer requests-- 2 charts. 
+[Bar Chart 1] chart is about the total numbers of car parkings the two hotel request. 
+[Line Chart 2] The number of car parking hotel request divided based on the time.
 
 [conclusion]
 ```{r setup, include=FALSE}
