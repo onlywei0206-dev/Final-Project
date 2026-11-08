@@ -14,7 +14,7 @@ customer type/ customer requests
 
 Factors effect hotel booking demand
 1. Which month has the highest reservation?
-2. Do city and resort hotel have the different seasonal booking pattern?
+2. 
 
 OUTLINE
 Q1: 1.Analyze the reservation number in every month.
