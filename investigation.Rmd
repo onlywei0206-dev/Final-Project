@@ -36,6 +36,62 @@ library(tidyverse)
 
 ```
 ```{r}
+library(tidyverse)
+#JIANG- Month
+hotel_data <- read_csv("data/hotel_booking.csv", show_col_types = FALSE)
+
+hotel_data %>%
+  summarise(
+    missing_month = sum(is.na(arrival_date_month)),
+    missing_year = sum(is.na(arrival_date_year))
+  )
+sum(duplicated(hotel_data))
+
+month_order <- c(
+  "January", "February", "March", "April",
+  "May", "June", "July", "August",
+  "September", "October", "November", "December"
+)
+
+hotel_data <- hotel_data %>%
+  mutate(
+    arrival_date_month = factor(
+      arrival_date_month,
+      levels = month_order,
+      ordered = TRUE
+    )
+  ) %>%
+  filter(
+    !is.na(arrival_date_month),
+    !is.na(arrival_date_year)
+  )
+
+levels(hotel_data$arrival_date_month)
+ggplot(
+  hotel_data,
+  aes(x = arrival_date_month)
+) +
+  geom_bar(fill = "steelblue") +
+  labs(
+    title = "Hotel Reservations by Arrival Month",
+    x = "Arrival month",
+    y = "Number of reservations"
+  ) +
+  theme_minimal()
+
+monthly_reservations <- hotel_data %>%
+  count(arrival_date_month, name = "reservations") %>%
+  arrange(desc(reservations))
+
+monthly_reservations
+
+peak_month <- monthly_reservations %>%
+  slice_max(
+    order_by = reservations,
+    n = 1,
+    with_ties = TRUE
+  )
+peak_month
 
 # YAO - Guest Composition Analysis
 
