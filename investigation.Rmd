@@ -87,7 +87,7 @@ geom_text(
   size = 3
 )
 
-  ) +
+  
   labs(
     title = "Guest Composition by Hotel Type",
     fill = "Guest Group"
