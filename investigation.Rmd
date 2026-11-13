@@ -37,7 +37,7 @@ library(tidyverse)
 ```
 ```{r}
 library(tidyverse)
-#JIANG- Month
+#1.JIANG- Month
 hotel_data <- read_csv("data/hotel_booking.csv", show_col_types = FALSE)
 
 hotel_data %>%
@@ -93,7 +93,23 @@ peak_month <- monthly_reservations %>%
   )
 peak_month
 
-# YAO - Guest Composition Analysis
+#2.LEI-Room Price
+hotel_clean <- hotel_data %>%
+	filter(adr > 0)
+ggplot(hotel_clean, aes(x = adr)) +
+geom_histogram(
+	binwidth = 30,
+	boundary = 0
+) +
+xlim(0,400) +
+facet_wrap(~hotel) +
+labs(
+	title = "How ADR related to the reservation frequency?", 
+	x = "ADR", 
+	y = "reservation frequency"
+)
+
+#3.YAO - Guest Composition Analysis
 
 library(tidyverse)
 
@@ -152,6 +168,45 @@ geom_text(
   theme(
     plot.title = element_text(hjust = 0.5)
   )
+
+#4.WEI-customer requests
+hotel_bookings <- read_csv("data/hotel_booking.csv") 
+parking_by_hotel <- hotel_bookings %>%
+group_by(hotel) %>%
+summarise(
+total_parking = sum(required_car_parking_spaces, na.rm = TRUE)
+)
+ggplot(parking_by_hotel, aes(x = hotel, 
+               y = total_parking)) +
+geom_col() +
+labs(
+        title = "Total Car Parking Spaces Required by Hotel Type",
+        x = "Hotel Type",
+        y = "Total Parking Spaces"
+)
+parking_by_month <- hotel_bookings %>%
+mutate(
+              arrival_date_month = factor(
+              arrival_date_month,
+              levels = month.name
+            )
+) %>%
+group_by(arrival_date_year, arrival_date_month) %>%
+summarise(
+                    total_parking = sum(required_car_parking_spaces, na.rm = TRUE)
+)
+ggplot(parking_by_month, aes(x = arrival_date_month,
+                     y = total_parking,
+                     group = arrival_date_year,
+                     colour = factor(arrival_date_year))) +
+geom_line() +
+geom_point() +
+labs(
+        title = "Monthly Demand for Car Parking Spaces",
+        x = "Month",
+        y = "Total Parking Spaces",
+        colour = "Year"
+)
 
 
 ```
