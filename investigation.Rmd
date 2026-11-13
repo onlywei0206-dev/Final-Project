@@ -35,6 +35,70 @@ library(tidyverse)
 
 
 ```
+```{r}
+
+# YAO - Guest Composition Analysis
+
+library(tidyverse)
+
+# Step 1: Import the dataset
+hotel_data <- read_csv("data/hotel_booking.csv",
+                       show_col_types = FALSE)
+
+# Step 2: Create four guest composition groups
+guest_data <- hotel_data %>%
+  filter(!is.na(adults),
+         !is.na(children),
+         !is.na(babies),
+         adults + children + babies > 0) %>%
+  mutate(
+    guest_group = case_when(
+      children > 0 & babies > 0 ~ "With both",
+      children > 0 ~ "With children only",
+      babies > 0 ~ "With babies only",
+      TRUE ~ "Adults only"
+    )
+  )
+
+# Step 3: Count bookings and calculate percentages
+guest_summary <- guest_data %>%
+  count(hotel, guest_group) %>%
+  group_by(hotel) %>%
+  mutate(percentage = n / sum(n)) %>%
+  ungroup()
+
+# Display the summary table
+print(guest_summary)
+
+# Step 4: Draw two pie charts
+ggplot(guest_summary,
+       aes(x = "", y = percentage, fill = guest_group)) +
+  geom_col(width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  facet_wrap(~ hotel) +
+
+geom_text(
+  aes(label = ifelse(
+    percentage >= 0.05,
+    scales::percent(percentage, accuracy = 0.1),
+    ""
+  )),
+  position = position_stack(vjust = 0.5),
+  size = 3
+)
+
+  ) +
+  labs(
+    title = "Guest Composition by Hotel Type",
+    fill = "Guest Group"
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(hjust = 0.5)
+  )
+
+
+```
 
 ```{r load-data}
 # load your data 
