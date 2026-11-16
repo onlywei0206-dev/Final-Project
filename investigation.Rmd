@@ -24,6 +24,7 @@ Factors effect hotel booking demand
 [Line Chart 2] The number of car parking hotel request divided based on the time. (WEI)
 
 [conclusion] (ZHU)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -37,6 +38,10 @@ library(tidyverse)
 ```
 ```{r}
 library(tidyverse)
+```
+
+
+```{r}
 #1.JIANG- Month
 hotel_data <- read_csv("data/hotel_booking.csv", show_col_types = FALSE)
 
@@ -92,7 +97,10 @@ peak_month <- monthly_reservations %>%
     with_ties = TRUE
   )
 peak_month
+```
 
+
+```{r}
 #2.LEI-Room Price
 hotel_clean <- hotel_data %>%
 	filter(adr > 0)
@@ -108,16 +116,17 @@ labs(
 	x = "ADR", 
 	y = "reservation frequency"
 )
+```
 
+
+```{r}
 #3.YAO - Guest Composition Analysis
 
 library(tidyverse)
 
-# Step 1: Import the dataset
 hotel_data <- read_csv("data/hotel_booking.csv",
                        show_col_types = FALSE)
 
-# Step 2: Create four guest composition groups
 guest_data <- hotel_data %>%
   filter(!is.na(adults),
          !is.na(children),
@@ -132,17 +141,14 @@ guest_data <- hotel_data %>%
     )
   )
 
-# Step 3: Count bookings and calculate percentages
 guest_summary <- guest_data %>%
   count(hotel, guest_group) %>%
   group_by(hotel) %>%
   mutate(percentage = n / sum(n)) %>%
   ungroup()
 
-# Display the summary table
 print(guest_summary)
 
-# Step 4: Draw two pie charts
 ggplot(guest_summary,
        aes(x = "", y = percentage, fill = guest_group)) +
   geom_col(width = 1, color = "white") +
@@ -168,7 +174,10 @@ geom_text(
   theme(
     plot.title = element_text(hjust = 0.5)
   )
+```
 
+
+```{r}
 #4.WEI-customer requests
 hotel_bookings <- read_csv("data/hotel_booking.csv") 
 parking_by_hotel <- hotel_bookings %>%

@@ -11,7 +11,7 @@
 
 <meta name="author" content="by Team-Name: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu, Laurence Yao" />
 
-<meta name="date" content="2026-11-13" />
+<meta name="date" content="2026-11-16" />
 
 <title>IDS investigation worksheet</title>
 
@@ -353,7 +353,7 @@ display: none;
 <h1 class="title toc-ignore">IDS investigation worksheet</h1>
 <h4 class="author">by Team-Name: Ziming Lei, Yi Wei, Ruijing Jiang,
 Yutong Zhu, Laurence Yao</h4>
-<h4 class="date">2026-11-13</h4>
+<h4 class="date">2026-11-16</h4>
 
 </div>
 
@@ -379,8 +379,8 @@ of car parking hotel request divided based on the time. (WEI)</p>
 <p>[conclusion] (ZHU)</p>
 <pre class="r"><code>library(tidyverse)
 # Add any other libraries here</code></pre>
-<pre class="r"><code>library(tidyverse)
-#1.JIANG- Month
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre class="r"><code>#1.JIANG- Month
 hotel_data &lt;- read_csv(&quot;data/hotel_booking.csv&quot;, show_col_types = FALSE)
 
 hotel_data %&gt;%
@@ -483,11 +483,9 @@ labs(
 
 library(tidyverse)
 
-# Step 1: Import the dataset
 hotel_data &lt;- read_csv(&quot;data/hotel_booking.csv&quot;,
                        show_col_types = FALSE)
 
-# Step 2: Create four guest composition groups
 guest_data &lt;- hotel_data %&gt;%
   filter(!is.na(adults),
          !is.na(children),
@@ -502,14 +500,12 @@ guest_data &lt;- hotel_data %&gt;%
     )
   )
 
-# Step 3: Count bookings and calculate percentages
 guest_summary &lt;- guest_data %&gt;%
   count(hotel, guest_group) %&gt;%
   group_by(hotel) %&gt;%
   mutate(percentage = n / sum(n)) %&gt;%
   ungroup()
 
-# Display the summary table
 print(guest_summary)</code></pre>
 <pre><code>## # A tibble: 8 × 4
 ##   hotel        guest_group            n percentage
@@ -522,8 +518,7 @@ print(guest_summary)</code></pre>
 ## 6 Resort Hotel With babies only     445   0.0111  
 ## 7 Resort Hotel With both            103   0.00257 
 ## 8 Resort Hotel With children only  3381   0.0844</code></pre>
-<pre class="r"><code># Step 4: Draw two pie charts
-ggplot(guest_summary,
+<pre class="r"><code>ggplot(guest_summary,
        aes(x = &quot;&quot;, y = percentage, fill = guest_group)) +
   geom_col(width = 1, color = &quot;white&quot;) +
   coord_polar(theta = &quot;y&quot;) +
