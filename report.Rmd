@@ -86,7 +86,7 @@ The addin will ignore code chunks and only count the words in prose. If you don'
 You can also load your data here and present any analysis results / plots.
 Make sure to hide your code with  `echo = FALSE` unless the point you are trying to make is about the code itself, in which case you should show your code.)
 
-3.1 Seasonal Booking Patterns
+-3.1 Seasonal Booking Patterns
 ```{r, echo=FALSE}
 hotel_data <- read_csv("data/hotel_booking.csv", show_col_types = FALSE)
 
@@ -123,7 +123,7 @@ ggplot(
 ) +
   geom_bar(fill = "steelblue") +
   labs(
-    title = "Hotel Reservations by Arrival Month",
+    title = "Figure1:Hotel Reservations by Arrival Month",
     x = "Arrival month",
     y = "Number of reservations"
   ) +
@@ -144,7 +144,13 @@ peak_month <- monthly_reservations %>%
 peak_month
 ```
 
-3.2 Room Price Distribution
+In this part, we look at how the number of hotel reservations changes in different months. We use a bar chart to show the number of reservations in each month.
+
+As shown in the Figure 1, August has the highest number of reservations, with around 13,800 bookings. January has the lowest number, with around 5,900 bookings. The number of reservations generally increases from January to May. It drops slightly in June, but increases again in July and August. After August, the number of bookings starts to decrease. November and December have much fewer reservations than the summer months.
+
+From the chart, we can see that more people book hotels during the summer, especially in August. In comparison, there are fewer bookings during the winter months. This may be because more people choose to travel during the summer holidays.
+
+-3.2 Room Price Distribution
 ```{r, echo=FALSE}
 hotel_clean <- hotel_data %>%
 	filter(adr > 0)
@@ -156,13 +162,19 @@ geom_histogram(
 xlim(0,400) +
 facet_wrap(~hotel) +
 labs(
-	title = "How ADR related to the reservation frequency?", 
+	title = "Figure2:Distribution of ADR in City Hotels and Resort Hotels", 
 	x = "ADR", 
 	y = "reservation frequency"
 )
 ```
 
-3.3 Guest Composition
+In this part, we look at the relationship between ADR and the number of reservations for City Hotels and Resort Hotels. We use histograms to compare the distribution of ADR in the two types of hotels.
+
+As shown in Figure 2, most City Hotel reservations have an ADR between around £60 and £150. The highest frequency is found between £60 and £90. For Resort Hotels, most reservations have a lower ADR, mainly between around £30 and £100. The number of reservations generally decreases as ADR increases in both types of hotels.
+
+Overall, the chart shows that City Hotels tend to have higher ADR values than Resort Hotels. This suggests that the two types of hotels have different room price ranges and booking patterns.
+
+-3.3 Guest Composition
 ```{r, echo=FALSE}
 hotel_data <- read_csv("data/hotel_booking.csv",
                        show_col_types = FALSE)
@@ -203,11 +215,9 @@ geom_text(
   )),
   position = position_stack(vjust = 0.5),
   size = 3
-)
-
-  
+) +
   labs(
-    title = "Guest Composition by Hotel Type",
+    title = "Figure3:Guest Composition by Hotel Type",
     fill = "Guest Group"
   ) +
   theme_void() +
@@ -216,7 +226,13 @@ geom_text(
   )
 ```
 
-3.4 Customer Parking Requirements
+In this part, we compare the different guest groups in City Hotels and Resort Hotels. We divide the guests into four groups based on the numbers of adults, children and babies. Pie charts are used to show the percentage of each group.
+
+As shown in Figure 3, adults only is the largest group in both types of hotels. It makes up 93.2% of City Hotel bookings and 90.2% of Resort Hotel bookings. The percentage of guests with children only is higher in Resort Hotels (8.4%) than in City Hotels (6.4%).
+
+Overall, the results show that most hotel bookings are made by adults travelling without children or babies. Resort Hotels have a slightly higher percentage of guests travelling with children. This may suggest that Resort Hotels are more popular with families.
+
+-3.4 Customer Parking Requirements
 ```{r, echo=FALSE}
 hotel_bookings <- read_csv("data/hotel_booking.csv") 
 parking_by_hotel <- hotel_bookings %>%
@@ -228,7 +244,7 @@ ggplot(parking_by_hotel, aes(x = hotel,
                y = total_parking)) +
 geom_col() +
 labs(
-        title = "Total Car Parking Spaces Required by Hotel Type",
+        title = "Figure4:Total Car Parking Spaces Required by Hotel Type",
         x = "Hotel Type",
         y = "Total Parking Spaces"
 )
@@ -250,19 +266,30 @@ ggplot(parking_by_month, aes(x = arrival_date_month,
 geom_line() +
 geom_point() +
 labs(
-        title = "Monthly Demand for Car Parking Spaces",
+        title = "Figure5:Monthly Car Parking Demand from 2015 to 2017",
         x = "Month",
         y = "Total Parking Spaces",
         colour = "Year"
 )
 ```
 
-3.5 Overall Discussion
-```{r, echo=FALSE}
-```
+In this part, we investigate the demand for car parking spaces at City Hotels and Resort Hotels. We use a bar chart to compare the total parking spaces required by the two hotel types. We also use a line chart to show how parking demand changes across different months and years.
+
+As shown in Figure 4, Resort Hotels require around 4,750 parking spaces, while City Hotels require around 1,950. This shows that the total parking demand for Resort Hotels is much higher than for City Hotels.
+
+Figure 5 shows the monthly changes in parking demand from 2015 to 2017. In 2016, parking demand reaches its highest point in August, with around 450 spaces requested. In 2015, the highest demand is in October, while in 2017, it is in April. We can also see that parking demand changes across different months and years.
+
+Overall, the results show that Resort Hotels have a higher total demand for parking spaces. There are also differences in monthly parking demand between different years. These results may help hotels understand their customers' parking needs and prepare enough parking spaces.
+
+-3.5 Discussion and Conclusion
+Overall, our analysis shows that City Hotels and Resort Hotels have some differences in booking patterns and customer characteristics. August has the highest number of reservations, while January has the lowest. City Hotels generally have higher ADR values, while Resort Hotels have more guests travelling with children and a higher demand for parking spaces.
+
+However, our investigation also has some limitations. We only focused on four factors, and other factors such as booking cancellations and length of stay were not included. Also, our analysis shows patterns in the data but cannot prove that these factors directly affect hotel booking demand. The parking data for different years also cover different months, which makes comparisons more difficult.
+
+Despite these limitations, this project has helped us understand the differences between City Hotels and Resort Hotels. It also shows that seasonal patterns, room prices, guest groups and parking requirements are useful factors to consider when studying hotel booking demand.
 
 
 
 ## References
 
-List any references here. You should, at a minimum, list your data source.
+mojtaba142 (n.d.). *Hotel Booking*. Kaggle. Available at: https://www.kaggle.com/datasets/mojtaba142/hotel-booking
