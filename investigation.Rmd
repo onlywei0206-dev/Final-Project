@@ -36,9 +36,7 @@ library(tidyverse)
 
 
 ```
-```{r}
-library(tidyverse)
-```
+
 
 
 ```{r}
@@ -78,7 +76,7 @@ ggplot(
 ) +
   geom_bar(fill = "steelblue") +
   labs(
-    title = "Hotel Reservations by Arrival Month",
+    title = "Figure1:Hotel Reservations by Arrival Month",
     x = "Arrival month",
     y = "Number of reservations"
   ) +
@@ -112,7 +110,7 @@ geom_histogram(
 xlim(0,400) +
 facet_wrap(~hotel) +
 labs(
-	title = "How ADR related to the reservation frequency?", 
+	title = "Figure2:Distribution of ADR in City Hotels and Resort Hotels", 
 	x = "ADR", 
 	y = "reservation frequency"
 )
@@ -121,9 +119,6 @@ labs(
 
 ```{r}
 #3.YAO - Guest Composition Analysis
-
-library(tidyverse)
-
 hotel_data <- read_csv("data/hotel_booking.csv",
                        show_col_types = FALSE)
 
@@ -163,11 +158,9 @@ geom_text(
   )),
   position = position_stack(vjust = 0.5),
   size = 3
-)
-
-  
+) +
   labs(
-    title = "Guest Composition by Hotel Type",
+    title = "Figure3:Guest Composition by Hotel Type",
     fill = "Guest Group"
   ) +
   theme_void() +
@@ -189,7 +182,7 @@ ggplot(parking_by_hotel, aes(x = hotel,
                y = total_parking)) +
 geom_col() +
 labs(
-        title = "Total Car Parking Spaces Required by Hotel Type",
+        title = "Figure4:Total Car Parking Spaces Required by Hotel Type",
         x = "Hotel Type",
         y = "Total Parking Spaces"
 )
@@ -211,7 +204,7 @@ ggplot(parking_by_month, aes(x = arrival_date_month,
 geom_line() +
 geom_point() +
 labs(
-        title = "Monthly Demand for Car Parking Spaces",
+        title = "Figure5:Monthly Car Parking Demand from 2015 to 2017",
         x = "Month",
         y = "Total Parking Spaces",
         colour = "Year"
