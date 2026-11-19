@@ -155,10 +155,10 @@ From the chart, we can see that more people book hotels during the summer, espec
 hotel_clean <- hotel_data %>%
 	filter(adr > 0)
 ggplot(hotel_clean, aes(x = adr)) +
-geom_histogram(
-	binwidth = 30,
-	boundary = 0
-) +
+geom_histogram(fill = "skyblue",
+               color = "black",
+               binwidth = 30,
+	             boundary = 0)+
 xlim(0,400) +
 facet_wrap(~hotel) +
 labs(
