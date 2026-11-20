@@ -1,6 +1,5 @@
 ---
 title: "Factors effect hotel booking demand"
-subtitle: "Presentation subtitle (if any)"
 author: "ABCDE: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu, Laurence Yao"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
@@ -47,39 +46,49 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 
 #Background image
 style_xaringan(
-  title_slide_background_image = "img/confetti.jpg"
+  title_slide_background_image = "img/background.jpg"
 )
 ```
 
 class: center, middle
 
-# Factors effect hotel booking demand
-## --by ABCDE: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu, Laurence Yao
-
----
-
-class: inverse, center, middle
-
 # Contents
 
-## 01 Background and Research Questions
+## 01 Background c
 
 ## 02 Research Analysis and Findings
-
-- Part 1 Seasonal Booking Patterns
-- Part 2 Room Price Distribution
-- Part 3 Guest Composition
-- Part 4 Customer Parking Requirements
 
 ## 03 Discussion
 
 ---
 
-# Hello World
+class: inverse, center, middle
 
-- Click the `Knit` button to compile your presentation
+# Background
 
-- Make sure to commit and push all resulting files to your GitHub repo
+<img src="img/hotel view.jpg" width="500">
+
+The hotel industry faces changing booking demand due to differences in travel seasons, room prices and customer preferences.
+
+Understanding hotel booking patterns is important for effective business planning, including room allocation, pricing strategies and resource management.
+
+In this project, we use the Hotel Booking Demand dataset to explore the factors associated with hotel booking demand, comparing City Hotels and Resort Hotels from different perspectives.
+
+---
+
+# Research Objectives
+
+The main objective of this project is to explore hotel booking demand and understand how different factors are related to booking patterns.
+
+We focus on four key areas:
+
+1. **Monthly Booking Trends** – Identify how booking demand changes across different months and years.
+
+2. **Room Prices** – Explore the relationship between Average Daily Rate (ADR) and reservation frequency.
+
+3. **Customer Groups** – Examine the distribution of different customer groups in City Hotels and Resort Hotels.
+
+4. **Parking Requirements** – Investigate customer parking requirements and compare the patterns between the two hotel types.
 
 ---
 
