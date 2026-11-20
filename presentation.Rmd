@@ -1,7 +1,7 @@
 ---
-title: "Presentation title"
+title: "Factors effect hotel booking demand"
 subtitle: "Presentation subtitle (if any)"
-author: "Team name <br> Names of team members"
+author: "ABCDE: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu, Laurence Yao"
 institute: "University of Edinburgh"
 date: "`r Sys.Date()`"
 output:
@@ -53,13 +53,25 @@ style_xaringan(
 
 class: center, middle
 
-## A statement of the overall goal / research question
+# Factors effect hotel booking demand
+## --by ABCDE: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu, Laurence Yao
 
 ---
 
 class: inverse, center, middle
 
-# Section title
+# Contents
+
+## 01 Background and Research Questions
+
+## 02 Research Analysis and Findings
+
+- Part 1 Seasonal Booking Patterns
+- Part 2 Room Price Distribution
+- Part 3 Guest Composition
+- Part 4 Customer Parking Requirements
+
+## 03 Discussion
 
 ---
 
