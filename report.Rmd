@@ -156,9 +156,15 @@ hotel_clean <- hotel_data %>%
 	filter(adr > 0)
 ggplot(hotel_clean, aes(x = adr)) +
 geom_histogram(fill = "skyblue",
-               color = "black",
+               color = "white",
                binwidth = 30,
 	             boundary = 0)+
+stat_bin(binwidth = 30, 
+           boundary = 0, 
+           geom = "text", 
+           aes(label = after_stat(count)), 
+           vjust = -0.5, 
+           size = 3) +
 xlim(0,400) +
 facet_wrap(~hotel) +
 labs(
