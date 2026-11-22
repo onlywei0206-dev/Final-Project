@@ -4,7 +4,7 @@
     <title>Factors effect hotel booking demand</title>
     <meta charset="utf-8" />
     <meta name="author" content="ABCDE: Ziming Lei, Yi Wei, Ruijing Jiang, Yutong Zhu, Laurence Yao" />
-    <meta name="date" content="2026-11-20" />
+    <meta name="date" content="2026-11-22" />
     <script src="libs/header-attrs-2.32/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### University of Edinburgh
 ]
 .date[
-### 2026-11-20
+### 2026-11-22
 ]
 
 ---
@@ -43,11 +43,11 @@ class: center, middle
 
 # Contents
 
-## 01 Background c
+## 01 Background
 
 ## 02 Research Analysis and Findings
 
-## 03 Discussion
+## 03 Conclusion
 
 ---
 
@@ -65,220 +65,58 @@ In this project, we use the Hotel Booking Demand dataset to explore the factors 
 
 ---
 
-# Research Objectives
+# Part 1: Monthly Booking Trends
 
-The main objective of this project is to explore hotel booking demand and understand how different factors are related to booking patterns.
-
-We focus on four key areas:
-
-1. **Monthly Booking Trends** – Identify how booking demand changes across different months and years.
-
-2. **Room Prices** – Explore the relationship between Average Daily Rate (ADR) and reservation frequency.
-
-3. **Customer Groups** – Examine the distribution of different customer groups in City Hotels and Resort Hotels.
-
-4. **Parking Requirements** – Investigate customer parking requirements and compare the patterns between the two hotel types.
+&lt;img src="img/part1" width="500"&gt;
 
 ---
 
-class: inverse, middle, center
+# Part 2: Room Prices
 
-# Using xaringan
-
----
-
-# xaringan
-
-- The presentation is created using the `xaringan` package
-
-- Use `---` to separate slides and `--` for incremental builds
-
---
-
-- Like this
+&lt;img src="img/part2" width="500"&gt;
 
 ---
 
-# Layouts
+# Part 3: Customer Groups
 
-You can use plain text
-
-- or bullet points
-
-.pull-left[
-or text in two columns `\(^*\)`
-]
-.pull-right[
-- like
-- this
-]
-
-.footnote[
-[*] And add footnotes
-]
+&lt;img src="img/part3" width="500"&gt;
 
 ---
 
-# Code
+# Part 4: Parking Requirements
 
-
-``` r
-# a boring regression
-model &lt;- lm(dist ~ speed, data = cars)
-tidy(model)
-```
-
-```
-## # A tibble: 2 × 5
-##   term        estimate std.error statistic  p.value
-##   &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
-## 1 (Intercept)   -17.6      6.76      -2.60 1.23e- 2
-## 2 speed           3.93     0.416      9.46 1.49e-12
-```
-
-``` r
-glance(model)
-```
-
-```
-## # A tibble: 1 × 12
-##   r.squared adj.r.squared sigma statistic  p.value    df logLik   AIC   BIC
-##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1     0.651         0.644  15.4      89.6 1.49e-12     1  -207.  419.  425.
-## # ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;
-```
+&lt;img src="img/part4.1" width="500"&gt;
+&lt;img src="img/part4.2" width="500"&gt;
 
 ---
 
-# Plots
+class: center, middle
+background-image: url("img/conclusion.jpg")
+background-size: cover
+background-position: center
 
+# &lt;span style="color:#FFFFFF;"&gt;Conclusion&lt;/span&gt;
 
+&lt;span style=";color:#FFFFFF;"&gt;
+This project explored hotel booking demand from four different perspectives: monthly booking trends, room prices, customer groups and parking requirements.
 
-&lt;img src="presentation_files/figure-html/plot-iris-1.png" alt="" width="80%" /&gt;
+&lt;span style=";color:#FFFFFF;"&gt;
+The analysis highlights differences in booking patterns and customer needs between City Hotels and Resort Hotels. It also shows that hotel demand and resource requirements can vary across different months and years.
 
----
+&lt;span style=";color:#FFFFFF;"&gt;
+In particular, Resort Hotels had considerably higher parking requirements than City Hotels, with approximately 4,750 spaces compared with 1,950.
 
-## Plot and text
-
-.pull-left[
-- Some text
-- goes here
-]
-.pull-right[
-&lt;img src="presentation_files/figure-html/unnamed-chunk-2-1.png" alt="" width="100%" /&gt;
-]
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;span style=";color:#FFFFFF;"&gt;
+Overall, understanding these patterns can help hotels make better decisions about pricing, room allocation and resource planning.
 
 ---
 
-# Images
+class: center, middle
+background-image: url("img/d.jpg")
+background-size: cover
+background-position: center
 
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/edinburgh-castle.jpg" alt="Image credit: Photo by Jörg Angeli on Unsplash." width="55%" /&gt;
-&lt;p class="caption"&gt;Image credit: Photo by Jörg Angeli on Unsplash.&lt;/p&gt;
-&lt;/div&gt;
-
-Or you can also include a full page image. See next slide.
-
----
-
-
-class: inverse, center, middle
-background-image: url(img/edinburgh-castle.jpg)
-background-size: contain
----
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
-# Feeling adventurous?
-
-- Want to find out more about `xaringan`? See https://slides.yihui.name/xaringan/#1.
-
-- You are welcome to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
-- But some of you might want to play around with slide styling. The 
-`xaringanthemer` provides some solutions for this that: https://pkg.garrickadenbuie.com/xaringanthemer.
-
-- And if you want more bells and whistles, there is also `xaringanExtra`: https://pkg.garrickadenbuie.com/xaringanExtra.
+# &lt;span style="color:#FFC857;"&gt;Thank You for Listening!&lt;/span&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
