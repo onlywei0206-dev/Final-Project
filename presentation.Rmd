@@ -120,7 +120,7 @@ In this project, we use the Hotel Booking Demand dataset to explore the factors 
 ---
 
 class: center, middle
-background-image: url("img/conclusion.jpg")
+background-image: url("img/bc.png")
 background-size: cover
 background-position: center
 
@@ -141,8 +141,8 @@ Overall, understanding these patterns can help hotels make better decisions abou
 ---
 
 class: center, middle
-background-image: url("img/d.jpg")
+background-image: url("img/th.jpg")
 background-size: cover
 background-position: center
 
-# <span style="color:#FFC857;">Thank You for Listening!</span>
+# <span style="color:#FFFFFF;">Thank You for Listening!</span>
