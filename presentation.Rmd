@@ -150,23 +150,14 @@ Key Findings
 
 ---
 
-class: center, middle
-background-image: url("img/bc.png")
-background-size: cover
-background-position: center
+# Conclusion
 
-# <span style="color:#FFFFFF;">Conclusion</span>
-
-<span style=";color:#FFFFFF;">
 This project explored hotel booking demand from four different perspectives: monthly booking trends, room prices, customer groups and parking requirements.
 
-<span style=";color:#FFFFFF;">
 The analysis highlights differences in booking patterns and customer needs between City Hotels and Resort Hotels. It also shows that hotel demand and resource requirements can vary across different months and years.
 
-<span style=";color:#FFFFFF;">
 In particular, Resort Hotels had considerably higher parking requirements than City Hotels, with approximately 4,750 spaces compared with 1,950.
 
-<span style=";color:#FFFFFF;">
 Overall, understanding these patterns can help hotels make better decisions about pricing, room allocation and resource planning.
 
 ---
