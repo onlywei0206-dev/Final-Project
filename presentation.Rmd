@@ -116,6 +116,14 @@ In this project, we use the Hotel Booking Demand dataset to explore the factors 
 
 <img src="img/part3" width="500">
 
+Key Findings
+
+1.Adults-only bookings: 93.2% at the city hotel and 90.2% at the resort hotel.
+
+2.Bookings with children or babies: 9.8% at the resort hotel versus 6.8% at the city hotel.
+
+3.Family-friendly facilities may be more important for resort hotels.
+
 ---
 
 # Part 4: Parking Requirements
