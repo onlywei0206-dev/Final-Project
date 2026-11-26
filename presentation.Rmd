@@ -102,7 +102,13 @@ In this project, we use the Hotel Booking Demand dataset to explore the factors 
 
 # Part 2: Room Prices
 
-<img src="img/part2" width="500">
+.pull-left[
+<img src="img/part2.1.png" width: 100%>
+]
+
+.pull-right[
+<img src="img/part2.2" width="100%">
+]
 
 ---
 
