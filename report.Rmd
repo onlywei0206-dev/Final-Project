@@ -116,32 +116,34 @@ hotel_data <- hotel_data %>%
     !is.na(arrival_date_year)
   )
 
-levels(hotel_data$arrival_date_month)
-ggplot(
-  hotel_data,
-  aes(x = arrival_date_month)
-) +
+hotel_data %>%
+  filter(is_canceled == 1) %>%
+  ggplot(aes(x = arrival_date_month)) +
+  geom_bar(fill = "tomato") +
+  labs(
+    title = "Cancelled Reservations by Arrival Month",
+    x = "Arrival month",
+    y = "Number of cancelled reservations"
+  ) +
+  theme_minimal()
+
+hotel_data %>%
+  filter(is_canceled == 0) %>%
+  ggplot(aes(x = arrival_date_month)) +
   geom_bar(fill = "steelblue") +
   labs(
-    title = "Figure1:Hotel Reservations by Arrival Month",
+    title = "Non-cancelled Reservations by Arrival Month",
     x = "Arrival month",
     y = "Number of reservations"
   ) +
   theme_minimal()
 
 monthly_reservations <- hotel_data %>%
+  filter(is_canceled == 0) %>%
   count(arrival_date_month, name = "reservations") %>%
   arrange(desc(reservations))
 
 monthly_reservations
-
-peak_month <- monthly_reservations %>%
-  slice_max(
-    order_by = reservations,
-    n = 1,
-    with_ties = TRUE
-  )
-peak_month
 ```
 
 In this part, we look at how the number of hotel reservations changes in different months. We use a bar chart to show the number of reservations in each month.
