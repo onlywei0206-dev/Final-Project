@@ -14,7 +14,7 @@ customer type/ customer requests
 
 Factors effect hotel booking demand
 [common]
-1. month--Which month has the highest reservation?--histogram (JIANG)
+1. month--Which month has the highest reservation and cancel rate ?--histogram (JIANG)
 2. room price--How ADR related to the reservation frequency?--histogram (LEI)
 
 [different]
